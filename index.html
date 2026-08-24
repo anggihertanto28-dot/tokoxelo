@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="AURELIA Coffee - Specialty coffee modern dan elegan">
+
+    <title>AURELIA Coffee | Specialty Coffee</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f8f5f0;
+            color: #241914;
+        }
+
+        /* ================= NAVBAR ================= */
+
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+
+            background: rgba(248, 245, 240, 0.92);
+            backdrop-filter: blur(12px);
+
+            border-bottom: 1px solid #ddd5cc;
+        }
+
+        .navbar {
+            max-width: 1200px;
+            margin: auto;
+
+            height: 75px;
+            padding: 0 25px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-family: Georgia, serif;
+            font-size: 27px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .logo span {
+            color: #9b6745;
+        }
+
+        nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #241914;
+            font-size: 14px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #9b6745;
+        }
+
+        .cart-button {
+            background: #241914;
+            color: white;
+            border: none;
+
+            padding: 11px 18px;
+            border-radius: 30px;
+
+            cursor: pointer;
+        }
+
+        /* ================= HERO ================= */
+
+        .hero {
+            min-height: 100vh;
+            max-width: 1200px;
+            margin: auto;
+
+            padding: 130px 25px 70px;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .hero-content small {
+            color: #9b6745;
+            letter-spacing: 4px;
+            font-weight: bold;
+        }
+
+        .hero-content h1 {
+            font-family: Georgia, serif;
+            font-size: clamp(50px, 7vw, 85px);
+            line-height: 1.05;
+
+            margin: 20px 0;
+        }
+
+        .hero-content h1 span {
+            color: #9b6745;
+            font-style: italic;
+        }
+
+        .hero-content p {
+            max-width: 520px;
+
+            color: #746860;
+            line-height: 1.8;
+
+            margin-bottom: 30px;
+        }
+
+        .hero-button {
+            display: inline-block;
+
+            background: #241914;
+            color: white;
+
+            padding: 15px 28px;
+            border-radius: 30px;
+
+            text-decoration: none;
+
+            transition: 0.3s;
+        }
+
+        .hero-button:hover {
+            background: #9b6745;
+            transform: translateY(-3px);
+        }
+
+        .hero-image {
+            height: 560px;
+
+            border-radius: 250px 250px 25px 25px;
+
+            background:
+                linear-gradient(
+                    rgba(0,0,0,0.05),
+                    rgba(0,0,0,0.25)
+                ),
+                url("https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1000&q=80");
+
+            background-size: cover;
+            background-position: center;
+
+            box-shadow: 0 25px 60px rgba(45, 28, 18, 0.18);
+        }
+
+        /* ================= ABOUT ================= */
+
+        .about {
+            background: #241914;
+            color: white;
+
+            padding: 100px 25px;
+
+            text-align: center;
+        }
+
+        .about-container {
+            max-width: 750px;
+            margin: auto;
+        }
+
+        .about h2 {
+            font-family: Georgia, serif;
+            font-size: 45px;
+
+            margin-bottom: 20px;
+        }
+
+        .about p {
+            color: #cfc4bb;
+            line-height: 1.9;
+        }
+
+        /* ================= PRODUK ================= */
+
+        .menu {
+            max-width: 1200px;
+            margin: auto;
+
+            padding: 100px 25px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title small {
+            color: #9b6745;
+            letter-spacing: 3px;
+        }
+
+        .section-title h2 {
+            font-family: Georgia, serif;
+            font-size: 48px;
+
+            margin: 10px 0;
+        }
+
+        .section-title p {
+            color: #756860;
+        }
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        article {
+            background: white;
+
+            border-radius: 20px;
+            overflow: hidden;
+
+            box-shadow: 0 8px 30px rgba(50, 30, 15, 0.07);
+
+            transition: 0.35s;
+        }
+
+        article:hover {
+            transform: translateY(-8px);
+
+            box-shadow:
+                0 18px 40px rgba(50, 30, 15, 0.14);
+        }
+
+        .product-image {
+            height: 280px;
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .coffee-1 {
+            background-image:
+                url("https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=800&q=80");
+        }
+
+        .coffee-2 {
+            background-image:
+                url("https://images.unsplash.com/photo-1494314671902-399b18174975?auto=format&fit=crop&w=800&q=80");
+        }
+
+        .coffee-3 {
+            background-image:
+                url("https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=800&q=80");
+        }
+
+        .product-content {
+            padding: 25px;
+        }
+
+        .product-content h3 {
+            font-family: Georgia, serif;
+            font-size: 25px;
+
+            margin-bottom: 10px;
+        }
+
+        .product-content p {
+            color: #81756d;
+            font-size: 14px;
+            line-height: 1.6;
+
+            margin-bottom: 20px;
+        }
+
+        .product-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .price {
+            color: #9b6745;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .buy {
+            border: none;
+
+            background: #241914;
+            color: white;
+
+            padding: 10px 17px;
+            border-radius: 25px;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+        .buy:hover {
+            background: #9b6745;
+        }
+
+        /* ================= KERANJANG ================= */
+
+        .cart-section {
+            background: #eee8e1;
+            padding: 80px 25px;
+        }
+
+        .cart {
+            max-width: 800px;
+            margin: auto;
+
+            background: white;
+            border-radius: 20px;
+
+            padding: 35px;
+
+            box-shadow: 0 10px 35px rgba(0,0,0,0.06);
+        }
+
+        .cart h2 {
+            font-family: Georgia, serif;
+            font-size: 35px;
+            margin-bottom: 25px;
+        }
+
+        #cartList {
+            color: #756860;
+            line-height: 2;
+        }
+
+        .total {
+            border-top: 1px solid #ddd;
+
+            margin-top: 20px;
+            padding-top: 20px;
+
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .checkout {
+            width: 100%;
+
+            border: none;
+
+            background: #241914;
+            color: white;
+
+            padding: 15px;
+
+            margin-top: 20px;
+
+            border-radius: 30px;
+
+            cursor: pointer;
+        }
+
+        .checkout:hover {
+            background: #9b6745;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: #17100d;
+            color: white;
+
+            padding: 50px 25px;
+
+            text-align: center;
+        }
+
+        footer h2 {
+            font-family: Georgia, serif;
+            font-size: 28px;
+        }
+
+        footer p {
+            color: #a89c94;
+            margin-top: 10px;
+        }
+
+        /* ================= RESPONSIVE ================= */
+
+        @media (max-width: 800px) {
+
+            nav {
+                display: none;
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-content p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-image {
+                height: 400px;
+            }
+
+            .products {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title h2 {
+                font-size: 38px;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <!-- HEADER -->
+
+    <header>
+
+        <div class="navbar">
+
+            <div class="logo">
+                AURELIA<span>.</span>
+            </div>
+
+            <nav>
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#menu">Menu</a>
+                <a href="#cart">Keranjang</a>
+            </nav>
+
+            <button
+                class="cart-button"
+                onclick="location.href='#cart'">
+
+                🛒 <span id="cartCount">0</span>
+
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- HERO -->
+
+    <main>
+
+        <section class="hero" id="home">
+
+            <div class="hero-content">
+
+                <small>
+                    SPECIALTY COFFEE • EST. 2026
+                </small>
+
+                <h1>
+                    Discover Your
+                    <span>Perfect</span>
+                    Coffee.
+                </h1>
+
+                <p>
+                    Nikmati pengalaman kopi premium dengan
+                    biji kopi pilihan yang dipanggang secara
+                    sempurna untuk menghasilkan aroma dan
+                    rasa yang luar biasa.
+                </p>
+
+                <a
+                    href="#menu"
+                    class="hero-button">
+
+                    Explore Menu →
+
+                </a>
+
+            </div>
+
+            <div class="hero-image"></div>
+
+        </section>
+
+
+        <!-- ABOUT -->
+
+        <section class="about" id="about">
+
+            <div class="about-container">
+
+                <h2>
+                    More Than Just Coffee.
+                </h2>
+
+                <p>
+                    Kami percaya bahwa kopi adalah sebuah
+                    pengalaman. Dari aroma pertama hingga
+                    tegukan terakhir, setiap cangkir dibuat
+                    dengan biji kopi berkualitas dan
+                    perhatian terhadap setiap detail.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- MENU -->
+
+        <section class="menu" id="menu">
+
+            <div class="section-title">
+
+                <small>
+                    OUR SELECTION
+                </small>
+
+                <h2>
+                    Signature Coffee
+                </h2>
+
+                <p>
+                    Pilihan kopi terbaik untuk harimu.
+                </p>
+
+            </div>
+
+
+            <div class="products">
+
+
+                <!-- PRODUK 1 -->
+
+                <article>
+
+                    <div
+                        class="product-image coffee-1">
+                    </div>
+
+                    <div class="product-content">
+
+                        <h3>
+                            Cappuccino
+                        </h3>
+
+                        <p>
+                            Espresso dengan perpaduan
+                            susu creamy dan foam lembut.
+                        </p>
+
+                        <div class="product-bottom">
+
+                            <span class="price">
+                                Rp32.000
+                            </span>
+
+                            <button
+                                class="buy"
+                                onclick="addToCart(
+                                    'Cappuccino',
+                                    32000
+                                )">
+
+                                + Add
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PRODUK 2 -->
+
+                <article>
+
+                    <div
+                        class="product-image coffee-2">
+                    </div>
+
+                    <div class="product-content">
+
+                        <h3>
+                            Caffe Latte
+                        </h3>
+
+                        <p>
+                            Espresso lembut dengan
+                            susu segar dan rasa creamy.
+                        </p>
+
+                        <div class="product-bottom">
+
+                            <span class="price">
+                                Rp30.000
+                            </span>
+
+                            <button
+                                class="buy"
+                                onclick="addToCart(
+                                    'Caffe Latte',
+                                    30000
+                                )">
+
+                                + Add
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PRODUK 3 -->
+
+                <article>
+
+                    <div
+                        class="product-image coffee-3">
+                    </div>
+
+                    <div class="product-content">
+
+                        <h3>
+                            Americano
+                        </h3>
+
+                        <p>
+                            Kopi hitam dengan rasa
+                            kuat, clean dan refreshing.
+                        </p>
+
+                        <div class="product-bottom">
+
+                            <span class="price">
+                                Rp28.000
+                            </span>
+
+                            <button
+                                class="buy"
+                                onclick="addToCart(
+                                    'Americano',
+                                    28000
+                                )">
+
+                                + Add
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- KERANJANG -->
+
+        <section
+            class="cart-section"
+            id="cart">
+
+            <div class="cart">
+
+                <h2>
+                    Your Order
+                </h2>
+
+                <div id="cartList">
+                    Keranjang masih kosong.
+                </div>
+
+                <div class="total">
+
+                    Total:
+                    <span id="total">
+                        Rp0
+                    </span>
+
+                </div>
+
+                <button
+                    class="checkout"
+                    onclick="checkout()">
+
+                    Checkout
+
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <h2>
+            AURELIA.
+        </h2>
+
+        <p>
+            Specialty Coffee • Good Coffee • Good Moments
+        </p>
+
+        <p>
+            © 2026 AURELIA Coffee
+        </p>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+        let cart = [];
+
+        let total = 0;
+
+
+        function addToCart(name, price) {
+
+            cart.push({
+                name: name,
+                price: price
+            });
+
+            total += price;
+
+            updateCart();
+
+        }
+
+
+        function updateCart() {
+
+            const list =
+                document.getElementById("cartList");
+
+            const count =
+                document.getElementById("cartCount");
+
+            const totalElement =
+                document.getElementById("total");
+
+
+            count.innerText = cart.length;
+
+
+            if (cart.length === 0) {
+
+                list.innerHTML =
+                    "Keranjang masih kosong.";
+
+                return;
+
+            }
+
+
+            list.innerHTML = "";
+
+
+            cart.forEach(function(item, index) {
+
+                list.innerHTML += `
+                    ${index + 1}.
+                    ${item.name}
+                    — Rp${item.price.toLocaleString("id-ID")}
+                    <br>
+                `;
+
+            });
+
+
+            totalElement.innerText =
+                "Rp" + total.toLocaleString("id-ID");
+
+        }
+
+
+        function checkout() {
+
+            if (cart.length === 0) {
+
+                alert(
+                    "Keranjang masih kosong."
+                );
+
+                return;
+
+            }
+
+
+            alert(
+                "Pesanan berhasil dibuat!\n\n" +
+                "Total pembayaran: Rp" +
+                total.toLocaleString("id-ID")
+            );
+
+
+            cart = [];
+
+            total = 0;
+
+            updateCart();
+
+            document.getElementById("total")
+                .innerText = "Rp0";
+
+        }
+
+    </script>
+
+</body>
+</html>
