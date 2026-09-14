@@ -1,77 +1,187 @@
-html>
-    <head>
-        <title>jelajah wisata indonesia</title>
-    </head> 
-         <body>
-             <table border="1" cellspacing="0" cellpadding="5" width="1350px">
-                <tr bgcolor="aqua">
-                    <td colspan="3">
-                        <h1 align="center">JELAJAH WISATA INDONESIA</h1>
-                        <p align="center">Temukan Keindahan Alam Dan Budaya Indonesia</p>
-                    </td>
-                </tr>
-                <tr align="center" bgcolor="pink">
-                    <td>Beranada</td>
-                    <td>Wisata</td>
-                    <td>Galeri</td>
-                </tr>
-             </table>
-                <h2 align="center">🏠 Beranda</h2>
-                <p align="center">
-                    Selamat datang di website jelajah Wisata Indonesia.Website ini berisi informasi mengenai beberapa
-                    wisata menarik Indonesia. 
-                </p>
-                <p align="center">
-                    Indonesia memiliki banyak sekali destinasi wisita,
-                    mulai dari pegunungan, pantai, laut, hingga wisata
-                </p>
-             <hr widht="100%" size="2" bgcolor="black">
-             <h2 align="center">🌄 Destinasi Wisata</h2>
-             <p align="center">Berikut adalah objek wisata menarik di Jawa Timur.</p>
-            
-            <tr>
-                <table border="1" cellpanding="18" cellspacing="1" widht="100">
-                <td align="center">
-                     <img src="c:\xampp\EMMA_web_XRPL1\bromo.jpg" alt="Gunung Bromo" width="315">
-                     <h3>Gunung Bromo</h3>
-                     <p>Gunung Bromo merupakan salah satu tempat terkenal yang berada di Jawa Timur.</p>
-              </td>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-              <td align="center">
-                  <img src="c:\xampp\EMMA_web_XRPL1\ijen.jpg" alt="kawah ijen" width="315">
-                  <h3>Kawah Ijen</h3>
-                  <p>Kawah Ijen merupakan salah satu tempat wisata terkenal yang berada di Jawa timur.</p>
-              </td>
+    <meta name="description" content="EXELLOKNJT - Toko makanan dan jajanan tradisional">
 
-              <td align="center">
-                <img src="c:\xampp\EMMA_web_XRPL1\coban.rondo.jpg" alt="Air Terjun Coban" Rondo width="315">
-                <h3>Coban Rondo</h3>
-                <p>Air terjun Coban Rondo merupakan salah satu tempat wisata terkenal di Jawa Timur.</p>
-              </td>
-            </tr> 
-        
-        <tr>
-            <td colspan="3" align="center">
-            <h2 align="center">🎶Musik nusantara</h2>
-            <p align="center">Silakan dengarkan musik berikut sambil menikmati informasi wisata Indonesia</p>
+    <title>EXELLOKNJT | Toko Kuliner</title>
 
-                <audio controls>
-                    <source src="xelo.mp3" type="audio/mpeg">
-                </audio> 
-                </td>
-                </tr>
-        <tr>
-            <td colspan="3" align="center">
-                <h2>🌌WONDERLAND INDONESIA</h2>
-                <P>Silakan melihat video berikut sambil menikmati informasi wisata Indonesia</P>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-                <video width="500" controls>
-                    <source src="delo.mp4" type="video/webm">
-                </video>
-            </td>
-        </tr>
-                </table>
-          <h3 align="center">Contact Person By Exello nu' e davino</h3>
-    
-            </body>
-</html>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Georgia, "Times New Roman", serif;
+            background: #f5f0e6;
+            color: #2d241c;
+        }
+
+        /* NAVBAR */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: #2d241c;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .logo {
+            color: #f5f0e6;
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 3px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 28px;
+        }
+
+        nav ul li a {
+            color: #f5f0e6;
+            text-decoration: none;
+            font-size: 15px;
+        }
+
+        nav ul li a:hover {
+            color: #c9a66b;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 100px 20px 50px;
+            background: #e9dfcf;
+        }
+
+        .hero-content {
+            max-width: 700px;
+        }
+
+        .hero small {
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #806747;
+        }
+
+        .hero h1 {
+            font-size: 65px;
+            margin: 20px 0 10px;
+            letter-spacing: 5px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            line-height: 1.7;
+            color: #665548;
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 13px 28px;
+            background: #2d241c;
+            color: white;
+            text-decoration: none;
+            border-radius: 3px;
+            transition: 0.3s;
+        }
+
+        .button:hover {
+            background: #806747;
+        }
+
+        /* MENU */
+        #menu {
+            padding: 100px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 38px;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #766658;
+        }
+
+        .menu-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .menu-card {
+            background: #fffaf2;
+            border: 1px solid #d7c7ad;
+            overflow: hidden;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .menu-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 10px 25px rgba(45, 36, 28, 0.12);
+        }
+
+        /* GAMBAR PRODUK */
+        .menu-image {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .menu-content {
+            padding: 30px 25px;
+        }
+
+        .menu-card h3 {
+            font-size: 24px;
+            margin-bottom: 12px;
+        }
+
+        .menu-card p {
+            color: #756658;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .price {
+            font-size: 22px;
+            font-weight: bold;
+            color: #806747;
+            margin-bottom: 20px;
+        }
+
+        .order {
+            display: inline-block;
+            padding: 10px 18px;
+            background: #2d241c;
+            color: white;
+            text-decoration: non
